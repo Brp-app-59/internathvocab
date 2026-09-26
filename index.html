@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Nutcracker – Vocabulary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF1F6; --paper:#FFFFFF; --ink:#1C2438; --muted:#5D667A;
+  --red:#9B1D30; --red-soft:#F6E3E6; --navy:#1F2E52; --brass:#C99A2E;
+  --ok:#1F7A4D; --ok-soft:#E1F2E8; --line:#D5DCE6;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121829; --paper:#1C2438; --ink:#EEF1F7; --muted:#A3ACBF;
+    --red:#E0566B; --red-soft:#3A1E27; --navy:#9FB4E6; --brass:#E2B650;
+    --ok:#5CCB8F; --ok-soft:#18332A; --line:#2E3852;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121829; --paper:#1C2438; --ink:#EEF1F7; --muted:#A3ACBF;
+  --red:#E0566B; --red-soft:#3A1E27; --navy:#9FB4E6; --brass:#E2B650;
+  --ok:#5CCB8F; --ok-soft:#18332A; --line:#2E3852;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Baloo 2",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:18px;line-height:1.4;-webkit-text-size-adjust:100%}
+main{max-width:560px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:2rem;line-height:1.05;margin:4px 0 2px;color:var(--red);font-weight:800}
+.sub{color:var(--muted);margin:0 0 20px}
+h2{font-size:1.1rem;margin:22px 0 8px;color:var(--navy);font-weight:700}
+.hidden{display:none!important}
+
+/* Réglages */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:inline-block;padding:8px 14px;border-radius:999px;border:2px solid var(--line);
+  background:var(--paper);font-weight:600;cursor:pointer;user-select:none}
+.chip input:checked + span{background:var(--navy);border-color:var(--navy);color:var(--bg)}
+.chip input:focus-visible + span{outline:3px solid var(--brass);outline-offset:2px}
+.chip small{font-weight:500;opacity:.75}
+.count{margin-top:10px;color:var(--muted)}
+.toggle{display:flex;gap:10px;align-items:center;margin-top:14px;cursor:pointer}
+.toggle input{width:22px;height:22px;accent-color:var(--red)}
+
+button{font:inherit;cursor:pointer;border:0;border-radius:14px;padding:12px 18px;font-weight:700}
+button:focus-visible,input[type=text]:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+.primary{background:var(--red);color:#fff;width:100%;font-size:1.25rem;padding:14px;margin-top:24px}
+.primary:disabled{opacity:.45;cursor:not-allowed}
+.ghost{background:transparent;color:var(--navy);border:2px solid var(--line)}
+.row{display:flex;gap:10px}
+.row > *{flex:1}
+
+details{margin-top:24px;background:var(--paper);border-radius:14px;padding:4px 14px;border:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;padding:10px 0;color:var(--navy)}
+.list{overflow-x:auto}
+.list table{width:100%;border-collapse:collapse;font-size:.95rem;margin-bottom:12px}
+.list th{text-align:left;color:var(--red);padding:10px 0 4px}
+.list td{padding:4px 6px 4px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.list td:first-child{font-weight:700}
+
+/* Quiz */
+.bar{height:10px;background:var(--line);border-radius:99px;overflow:hidden;margin:6px 0 4px}
+.bar i{display:block;height:100%;width:0;background:var(--brass);transition:width .3s}
+.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.95rem}
+.card{position:relative;background:var(--paper);border-radius:22px;margin-top:16px;
+  padding:26px 22px 22px 46px;border:2px solid var(--line);min-height:230px}
+/* rangée de boutons dorés, comme sur la veste du casse-noisette */
+.card::before{content:"";position:absolute;left:16px;top:26px;bottom:26px;width:12px;
+  background:radial-gradient(circle,var(--brass) 5px,transparent 6px) center top/12px 34px repeat-y}
+.dir{font-size:.95rem;color:var(--muted);font-weight:600}
+.prompt{font-size:2.3rem;font-weight:800;line-height:1.1;margin:6px 0 2px;color:var(--navy);word-break:break-word}
+.pos{color:var(--muted);font-size:.95rem;min-height:1.4em}
+.say{background:transparent;padding:4px 8px;font-size:1.3rem;vertical-align:middle}
+input[type=text]{width:100%;font:inherit;font-size:1.3rem;padding:12px 14px;border-radius:14px;
+  border:2px solid var(--line);background:var(--bg);color:var(--ink);margin-top:16px}
+.feedback{margin-top:14px;padding:12px 14px;border-radius:14px;font-weight:600}
+.feedback.ok{background:var(--ok-soft);color:var(--ok)}
+.feedback.ko{background:var(--red-soft);color:var(--red)}
+.feedback b{font-size:1.2rem}
+.actions{margin-top:14px}
+.actions button{width:100%}
+.btn-ok{background:var(--ok);color:#fff}
+.btn-ko{background:var(--red);color:#fff}
+.btn-nav{background:var(--navy);color:var(--bg)}
+.quit{margin-top:18px;width:100%}
+
+/* Résultat */
+.score{font-size:3.4rem;font-weight:800;color:var(--red);line-height:1;margin:10px 0 0}
+.misses{list-style:none;padding:0;margin:8px 0 0}
+.misses li{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin-bottom:6px}
+.misses li b{color:var(--navy)}
+
+@media (prefers-reduced-motion: reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+<main>
+
+<!-- ÉCRAN RÉGLAGES -->
+<section id="setup">
+  <h1>The Nutcracker</h1>
+  <p class="sub">Révision du vocabulaire, dans les deux sens.</p>
+
+  <h2>Chapitres à réviser</h2>
+  <div class="chips" id="chapters"></div>
+  <p class="count" id="count"></p>
+
+  <h2>Sens</h2>
+  <div class="chips">
+    <label class="chip"><input type="radio" name="dir" value="both" checked><span>Les deux sens</span></label>
+    <label class="chip"><input type="radio" name="dir" value="en-fr"><span>Anglais → Français</span></label>
+    <label class="chip"><input type="radio" name="dir" value="fr-en"><span>Français → Anglais</span></label>
+  </div>
+
+  <h2>Façon de répondre</h2>
+  <div class="chips">
+    <label class="chip"><input type="radio" name="mode" value="type" checked><span>J'écris la réponse</span></label>
+    <label class="chip"><input type="radio" name="mode" value="card"><span>Je réponds dans ma tête</span></label>
+  </div>
+
+  <label class="toggle"><input type="checkbox" id="onlyHard"><span id="hardLabel">Seulement mes mots difficiles</span></label>
+
+  <button class="primary" id="start">C'est parti</button>
+
+  <details>
+    <summary>Voir la liste des mots</summary>
+    <div class="list" id="list"></div>
+  </details>
+</section>
+
+<!-- ÉCRAN QUIZ -->
+<section id="quiz" class="hidden">
+  <div class="meta"><span id="progressText"></span><span id="scoreText"></span></div>
+  <div class="bar"><i id="progressBar"></i></div>
+
+  <div class="card">
+    <div class="dir" id="dirLabel"></div>
+    <div class="prompt"><span id="prompt"></span> <button class="say hidden" id="sayPrompt" aria-label="Écouter la prononciation">🔊</button></div>
+    <div class="pos" id="pos"></div>
+
+    <div id="typeZone">
+      <input type="text" id="answer" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Ta réponse…">
+      <div class="actions row" id="typeButtons">
+        <button class="ghost" id="dunno">Je ne sais pas</button>
+        <button class="btn-nav" id="check">Valider</button>
+      </div>
+    </div>
+
+    <div id="cardZone">
+      <div class="actions"><button class="btn-nav" id="reveal">Voir la réponse</button></div>
+      <div class="actions row hidden" id="selfButtons">
+        <button class="btn-ko" id="selfKo">À revoir</button>
+        <button class="btn-ok" id="selfOk">Je savais</button>
+      </div>
+    </div>
+
+    <div class="feedback hidden" id="feedback"></div>
+    <div class="actions hidden" id="nextZone"><button class="btn-nav" id="next">Suivant</button></div>
+  </div>
+
+  <button class="ghost quit" id="quit">Arrêter</button>
+</section>
+
+<!-- ÉCRAN RÉSULTAT -->
+<section id="result" class="hidden">
+  <h1>Bravo, c'est fini !</h1>
+  <p class="score" id="finalScore"></p>
+  <p class="sub" id="finalText"></p>
+  <div id="missBlock">
+    <h2>Mots à retravailler</h2>
+    <ul class="misses" id="missList"></ul>
+  </div>
+  <div class="row" style="margin-top:20px">
+    <button class="ghost" id="backSetup">Réglages</button>
+    <button class="btn-ko" id="redoMisses">Revoir ces mots</button>
+  </div>
+</section>
+
+</main>
+
+<script>
+/* Vocabulaire. alt = autres réponses acceptées */
+const VOCAB = {
+ 1:[
+  ["Christmas Eve","n.","la veille de Noël"],
+  ["Street","n.","la rue"],
+  ["Toy","n.","un jouet"],
+  ["Sweet","n.","un bonbon"],
+  ["Shop","n.","un magasin",{frAlt:["une boutique"]}],
+  ["Christmas carol","n.","un chant de Noël"],
+  ["Sitting room","n.","le salon"],
+  ["Candle","n.","une bougie"],
+  ["Present","n.","un cadeau"],
+  ["Pretty","adj.","joli",{frAlt:["jolie"]}],
+  ["Doll","n.","une poupée"],
+  ["Often","adv.","souvent"],
+  ["Soon","adv.","bientôt"],
+  ["Thin","adj.","mince"],
+  ["Black patch","n.","un cache-œil noir",{frAlt:["cache-oeil noir","cache oeil noir"]}],
+  ["Clever","adj.","intelligent",{frAlt:["intelligente"]}],
+  ["Almost","adv.","presque"],
+  ["To wear","v.","porter (des vêtements)"],
+  ["To laugh","v.","rigoler",{frAlt:["rire"]}],
+  ["To blow","v.","souffler"]
+ ],
+ 2:[
+  ["Box","n.","une boîte"],
+  ["To take out","v.","sortir"],
+  ["Dressed","adj.","vêtu en",{frAlt:["vêtu","habillé","habillé en"]}],
+  ["To beat","v.","battre"],
+  ["Aunt","n.","une tante"],
+  ["To find","v.","trouver"],
+  ["Carefully","adv.","avec attention",{frAlt:["soigneusement"]}],
+  ["Nutcracker","n.","un casse-noisette",{frAlt:["casse-noisettes"]}],
+  ["Handsome","adj.","beau"],
+  ["To lead","v.","mener"],
+  ["To throw","v.","jeter"],
+  ["Mine","pron.","le mien/la mienne"],
+  ["On the floor","","sur le sol",{frAlt:["par terre"]}],
+  ["A sling","n.","une écharpe médicale"]
+ ],
+ 3:[
+  ["Broken","adj.","cassé",{frAlt:["cassée"]}],
+  ["Strange","adj.","étrange"],
+  ["To grow","v.","pousser",{frAlt:["grandir"]}],
+  ["To be afraid","v.","avoir peur"],
+  ["To hide","v.","se cacher",{frAlt:["cacher"]}],
+  ["Mice","n.","des souris"],
+  ["Tail","n.","la queue"],
+  ["Jacket","n.","la veste"],
+  ["Trousers","n.","un pantalon"],
+  ["To fight","v.","se combattre",{frAlt:["combattre","se battre","battre"]}],
+  ["Sword","n.","une épée"],
+  ["To fire","v.","tirer"],
+  ["Cannon","n.","le canon"],
+  ["Smoke","n.","la fumée"],
+  ["To cover","v.","couvrir"]
+ ],
+ 4:[
+  ["All around","adv.","tout autour"],
+  ["Sleigh","n.","un traîneau"],
+  ["Bad spell","n.","un mauvais sort"],
+  ["True love","n.","le grand amour"],
+  ["Castle","n.","un château"],
+  ["Land of sweets","n.","le pays des bonbons",{enAlt:["land of sweet"]}],
+  ["Next to","prep.","à côté de"],
+  ["Pillow","n.","l'oreiller"],
+  ["Peppermint stick","n.","un sucre d'orge"],
+  ["To get off","v.","descendre"],
+  ["Snowflake","n.","un flocon de neige"],
+  ["Smell","n.","l'odeur"]
+ ],
+ 5:[
+  ["Horn","n.","un cor (instrument de musique)"],
+  ["Sugar plum","n.","une prune"],
+  ["Ballet slippers","n.","des chaussons de danse"]
+ ],
+ 6:[
+  ["Perhaps","adv.","peut-être",{enAlt:["maybe"]}]
+ ]
+};
+
+/* Mise à plat */
+const WORDS=[];
+for(const ch in VOCAB){VOCAB[ch].forEach((w,i)=>{
+  const o=w[3]||{};
+  WORDS.push({id:ch+"-"+i,ch:+ch,en:w[0],pos:w[1],fr:w[2],enAlt:o.enAlt||[],frAlt:o.frAlt||[]});
+});}
+
+/* Stockage local (réglages + mots difficiles) */
+const store={
+  get(k,d){try{const v=localStorage.getItem("nutcracker:"+k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem("nutcracker:"+k,JSON.stringify(v))}catch(e){}}
+};
+let hard=store.get("hard",{}); // id -> nombre d'erreurs à rattraper
+
+/* Normalisation : minuscules, sans accents, sans articles ni "to", sans parenthèses */
+function norm(s){
+  s=s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+     .replace(/[’`´]/g,"'").replace(/œ/g,"oe").replace(/\(.*?\)/g," ").trim();
+  let prev;
+  do{prev=s;s=s.replace(/^(?:(?:to|the|a|an|le|la|les|un|une|des|du|se)\s+|(?:l|s)'\s*)/,"").trim();}while(s!==prev);
+  return s.replace(/[^a-z0-9]/g,"");
+}
+function answersFor(w,dir){
+  const base=dir==="en-fr"?[w.fr,...w.frAlt]:[w.en,...w.enAlt];
+  const out=[];base.forEach(a=>a.split("/").forEach(p=>out.push(norm(p))));
+  return out.filter(Boolean);
+}
+function lev(a,b){
+  const m=a.length,n=b.length;if(Math.abs(m-n)>1)return 2;
+  const d=Array.from({length:m+1},(_,i)=>[i,...Array(n).fill(0)]);
+  for(let j=1;j<=n;j++)d[0][j]=j;
+  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)
+    d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+  return d[m][n];
+}
+
+/* Prononciation anglaise */
+function speak(text){
+  if(!("speechSynthesis" in window))return;
+  const u=new SpeechSynthesisUtterance(text.replace(/\(.*?\)/g,""));
+  u.lang="en-GB";u.rate=.85;
+  const v=speechSynthesis.getVoices().find(v=>/^en[-_]GB/i.test(v.lang))||speechSynthesis.getVoices().find(v=>/^en/i.test(v.lang));
+  if(v)u.voice=v;
+  speechSynthesis.cancel();speechSynthesis.speak(u);
+}
+const canSpeak="speechSynthesis" in window;
+
+/* ---------- Réglages ---------- */
+const $=id=>document.getElementById(id);
+const savedCh=store.get("chapters",[1,2,3]);
+const chWrap=$("chapters");
+Object.keys(VOCAB).forEach(ch=>{
+  const lab=document.createElement("label");lab.className="chip";
+  lab.innerHTML=`<input type="checkbox" value="${ch}" ${savedCh.includes(+ch)?"checked":""}><span>Chapter ${ch} <small>(${VOCAB[ch].length})</small></span>`;
+  chWrap.appendChild(lab);
+});
+const saved=store.get("opts",{});
+if(saved.dir)document.querySelector(`input[name=dir][value="${saved.dir}"]`).checked=true;
+if(saved.mode)document.querySelector(`input[name=mode][value="${saved.mode}"]`).checked=true;
+
+function selectedChapters(){return[...chWrap.querySelectorAll("input:checked")].map(i=>+i.value)}
+function pool(){
+  const chs=selectedChapters();
+  let p=WORDS.filter(w=>chs.includes(w.ch));
+  if($("onlyHard").checked)p=p.filter(w=>hard[w.id]>0);
+  return p;
+}
+function refreshSetup(){
+  const chs=selectedChapters();store.set("chapters",chs);
+  const nHard=WORDS.filter(w=>chs.includes(w.ch)&&hard[w.id]>0).length;
+  $("hardLabel").textContent=`Seulement mes mots difficiles (${nHard})`;
+  if(nHard===0)$("onlyHard").checked=false;
+  $("onlyHard").disabled=nHard===0;
+  const n=pool().length;const dir=document.querySelector("input[name=dir]:checked").value;
+  const q=dir==="both"?n*2:n;
+  $("count").textContent=n?`${n} mots, soit ${q} questions.`:"Coche au moins un chapitre.";
+  $("start").disabled=!n;
+  // liste
+  let html="";
+  chs.forEach(ch=>{
+    html+=`<table><tr><th colspan="2">Chapter ${ch}</th></tr>`;
+    VOCAB[ch].forEach(w=>{html+=`<tr><td>${w[0]}</td><td>${w[2]}</td></tr>`});
+    html+="</table>";
+  });
+  $("list").innerHTML=html||"<p>Aucun chapitre coché.</p>";
+}
+document.querySelectorAll("#setup input").forEach(i=>i.addEventListener("change",()=>{
+  store.set("opts",{dir:document.querySelector("input[name=dir]:checked").value,mode:document.querySelector("input[name=mode]:checked").value});
+  refreshSetup();
+}));
+refreshSetup();
+
+/* ---------- Quiz ---------- */
+let queue=[],total=0,done=0,firstTry=0,seen=new Set(),missed=new Map(),current=null,answered=false,mode="type";
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function show(id){["setup","quiz","result"].forEach(s=>$(s).classList.toggle("hidden",s!==id));window.scrollTo(0,0)}
+
+function startQuiz(words){
+  const dir=document.querySelector("input[name=dir]:checked").value;
+  mode=document.querySelector("input[name=mode]:checked").value;
+  queue=[];
+  words.forEach(w=>{
+    if(dir!=="fr-en")queue.push({w,dir:"en-fr"});
+    if(dir!=="en-fr")queue.push({w,dir:"fr-en"});
+  });
+  shuffle(queue);
+  // évite d'avoir le même mot deux fois de suite
+  for(let i=1;i<queue.length;i++)if(queue[i].w===queue[i-1].w){const j=(i+2)%queue.length;[queue[i],queue[j]]=[queue[j],queue[i]]}
+  total=queue.length;done=0;firstTry=0;seen=new Set();missed=new Map();
+  $("typeZone").classList.toggle("hidden",mode!=="type");
+  $("cardZone").classList.toggle("hidden",mode!=="card");
+  show("quiz");nextQuestion();
+}
+
+function nextQuestion(){
+  if(!queue.length){finish();return}
+  current=queue.shift();answered=false;
+  const {w,dir}=current;
+  $("dirLabel").textContent=dir==="en-fr"?"En français ?":"In English ?";
+  $("prompt").textContent=dir==="en-fr"?w.en:w.fr;
+  $("pos").textContent=w.pos?`(${w.pos})`+(dir==="fr-en"&&w.pos==="v."?" – n'oublie pas « to »":""):"";
+  $("sayPrompt").classList.toggle("hidden",!(canSpeak&&dir==="en-fr"));
+  $("feedback").className="feedback hidden";
+  $("nextZone").classList.add("hidden");
+  if(mode==="type"){
+    $("typeButtons").classList.remove("hidden");
+    const inp=$("answer");inp.value="";inp.disabled=false;inp.placeholder=dir==="en-fr"?"En français…":"In English…";
+    inp.lang=dir==="en-fr"?"fr":"en";inp.focus();
+  }else{
+    $("reveal").parentElement.classList.remove("hidden");
+    $("selfButtons").classList.add("hidden");
+  }
+  updateProgress();
+}
+
+function updateProgress(){
+  $("progressText").textContent=`${done} / ${total}`;
+  $("scoreText").textContent=`${firstTry} du premier coup`;
+  $("progressBar").style.width=(total?done/total*100:0)+"%";
+}
+
+function expected(){const {w,dir}=current;return dir==="en-fr"?w.fr:w.en}
+
+function record(ok){
+  const {w,dir}=current;const key=w.id+dir;
+  if(ok){
+    done++;
+    if(!seen.has(key)){firstTry++;if(hard[w.id]>0)hard[w.id]--;}
+  }else{
+    if(!seen.has(key)){missed.set(w.id,w);hard[w.id]=(hard[w.id]||0)+1;}
+    // on repose la question un peu plus tard
+    queue.splice(Math.min(queue.length,3),0,current);
+  }
+  seen.add(key);
+  store.set("hard",hard);
+  updateProgress();
+}
+
+function showFeedback(ok,msg){
+  const fb=$("feedback");fb.className="feedback "+(ok?"ok":"ko");
+  const {w,dir}=current;
+  const speakBtn=canSpeak?` <button class="say" id="sayAns" aria-label="Écouter">🔊</button>`:"";
+  fb.innerHTML=`${msg}<br><b>${w.en}</b> = <b>${w.fr}</b>${speakBtn}`;
+  if(canSpeak)$("sayAns").onclick=()=>speak(w.en);
+  $("nextZone").classList.remove("hidden");
+  $("next").focus();
+  if(canSpeak&&dir==="fr-en"&&ok)speak(w.en);
+}
+
+function checkTyped(giveUp){
+  if(answered)return;
+  const val=$("answer").value.trim();
+  if(!giveUp&&!val){$("answer").focus();return}
+  answered=true;$("answer").disabled=true;$("typeButtons").classList.add("hidden");
+  if(giveUp){record(false);showFeedback(false,"Pas grave, la voici :");return}
+  const v=norm(val),good=answersFor(current.w,current.dir);
+  if(good.includes(v)){record(true);showFeedback(true,"Bravo !");return}
+  const close=good.some(g=>g.length>=4&&lev(v,g)===1);
+  record(false);
+  showFeedback(false,close?"Presque ! Regarde bien l'orthographe :":"Raté, la bonne réponse :");
+}
+
+$("check").onclick=()=>checkTyped(false);
+$("dunno").onclick=()=>checkTyped(true);
+$("answer").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();e.stopPropagation();checkTyped(false)}});
+$("reveal").onclick=()=>{
+  $("reveal").parentElement.classList.add("hidden");
+  $("selfButtons").classList.remove("hidden");
+  const fb=$("feedback");fb.className="feedback ok";
+  const speakBtn=canSpeak?` <button class="say" id="sayAns" aria-label="Écouter">🔊</button>`:"";
+  fb.innerHTML=`<b>${expected()}</b>${speakBtn}`;
+  if(canSpeak)$("sayAns").onclick=()=>speak(current.w.en);
+  $("selfOk").focus();
+};
+$("selfOk").onclick=()=>{record(true);nextQuestion()};
+$("selfKo").onclick=()=>{record(false);nextQuestion()};
+$("next").onclick=nextQuestion;
+document.addEventListener("keydown",e=>{
+  if(e.key==="Enter"&&!$("nextZone").classList.contains("hidden")&&document.activeElement!==$("answer")){e.preventDefault();nextQuestion()}
+});
+$("sayPrompt").onclick=()=>speak(current.w.en);
+$("start").onclick=()=>startQuiz(pool());
+$("quit").onclick=()=>{refreshSetup();show("setup")};
+
+function finish(){
+  const pct=total?Math.round(firstTry/total*100):0;
+  $("finalScore").textContent=`${firstTry} / ${total}`;
+  $("finalText").textContent=pct===100?"Tout juste du premier coup !":
+    pct>=80?"Très bien, encore quelques mots à revoir.":
+    pct>=50?"C'est en bonne voie, on continue !":"Il faut encore s'entraîner, courage !";
+  const ul=$("missList");ul.innerHTML="";
+  missed.forEach(w=>{const li=document.createElement("li");li.innerHTML=`<b>${w.en}</b> = ${w.fr}`;ul.appendChild(li)});
+  $("missBlock").classList.toggle("hidden",!missed.size);
+  $("redoMisses").classList.toggle("hidden",!missed.size);
+  updateProgress();show("result");
+}
+$("redoMisses").onclick=()=>startQuiz([...missed.values()]);
+$("backSetup").onclick=()=>{refreshSetup();show("setup")};
+if(canSpeak)speechSynthesis.getVoices();
+</script>
+</body>
+</html>
